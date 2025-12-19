@@ -1,0 +1,6 @@
+﻿services:
+  companyapp:
+    image: companyapp
+    build:
+      context: .
+      dockerfile: Dockerfile
