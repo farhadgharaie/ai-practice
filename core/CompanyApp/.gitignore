@@ -1,0 +1,13 @@
+# .NET build artifacts
+bin/
+obj/
+
+# Rider / VSCode / Visual Studio
+.vscode/
+.idea/
+*.user
+*.suo
+*.cache
+
+# Logs
+*.log
