@@ -27,7 +27,7 @@ public static class ServiceCollectionExtensions
 
         services.AddHttpClient<IThirdPartyCompanySearchService, ThirdPartyCompanySearchService>(client =>
         {
-            client.BaseAddress = new Uri("http://localhost:1313/");
+            client.BaseAddress = new Uri("http://localhost:8000/");
         });
 
         return services;

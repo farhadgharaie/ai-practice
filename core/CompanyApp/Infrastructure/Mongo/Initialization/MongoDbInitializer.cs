@@ -42,10 +42,10 @@ public class MongoDbInitializer : IMongoDbInitializer
 
         var predefined = new[]
         {
-            new Company { Id = Guid.NewGuid().ToString(), Name = "ConSmart" },
-            new Company { Id = Guid.NewGuid().ToString(), Name = "TechNova" },
-            new Company { Id = Guid.NewGuid().ToString(), Name = "Apex Solutions" }
-        };
+            new Company(Guid.NewGuid().ToString(),"ConSmart" ),
+            new Company( Guid.NewGuid().ToString(),"TechNova" ),
+            new Company (Guid.NewGuid().ToString(), "Apex Solutions")
+         };
 
         await collection.InsertManyAsync(predefined);
     }

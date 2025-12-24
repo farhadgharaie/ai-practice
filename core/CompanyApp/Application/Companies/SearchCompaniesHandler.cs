@@ -27,7 +27,7 @@ public class SearchCompaniesHandler
         if (localResults.Count > 0)
         {
             return localResults.Select(x => new CompanyDto(x.Id, x.Name))
-                .ToList();;
+                .ToList();
         }
 
         // Fallback to third-party API
