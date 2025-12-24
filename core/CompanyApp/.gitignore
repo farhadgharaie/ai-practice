@@ -8,6 +8,8 @@ obj/
 *.user
 *.suo
 *.cache
+.idea/
+*.DotSettings.user
 
 # Logs
 *.log
