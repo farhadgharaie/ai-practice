@@ -1,6 +1,7 @@
 using CompanyApp.Domain.Interfaces;
 using CompanyApp.Infrastructure.Mongo;
 using CompanyApp.Infrastructure.Mongo.Initialization;
+using CompanyApp.Infrastructure.ThirdParty;
 
 namespace CompanyApp.Infrastructure.DependencyInjection;
 
@@ -10,11 +11,6 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        // services.Configure<MongoDbSettings>(
-        //     configuration.GetSection("MongoDb"));
-        //
-        // services.AddSingleton<MongoDbContext>();
-        // services.AddScoped<ICompanyRepository, CompanyRepository>();
         
         // Bind MongoDbSettings
         services.Configure<MongoDbSettings>(
@@ -29,6 +25,10 @@ public static class ServiceCollectionExtensions
         // Database initializer
         services.AddSingleton<IMongoDbInitializer, MongoDbInitializer>();
 
+        services.AddHttpClient<IThirdPartyCompanySearchService, ThirdPartyCompanySearchService>(client =>
+        {
+            client.BaseAddress = new Uri("http://localhost:1313/");
+        });
 
         return services;
     }
