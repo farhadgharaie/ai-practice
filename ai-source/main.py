@@ -8,6 +8,6 @@ def read_root():
     return {"message": "Hello, World from FastAPI!"}
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str | None = None):
-    return {"item_id": item_id, "query": q}
+@app.get("/company/search/{name}")
+def read_item(name: str | None = None):
+    return [{"name": name, "id": "122"}]
