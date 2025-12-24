@@ -1,6 +1,6 @@
+using CompanyApp.Domain.Entities;
+using MediatR;
+
 namespace CompanyApp.Application.Companies;
 
-public class SearchCompaniesQuery
-{
-    
-}
+public record SearchCompaniesQuery(string Name) : IRequest<List<Company>>;

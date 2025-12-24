@@ -1,6 +1,6 @@
 @CompanyApp_HostAddress = http://localhost:5129
 
-GET {{CompanyApp_HostAddress}}/weatherforecast/
+GET {{CompanyApp_HostAddress}}/api/companies/search
 Accept: application/json
 
 ###
